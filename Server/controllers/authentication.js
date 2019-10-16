@@ -7,25 +7,24 @@ function tokenForUser(user) {
   return jwt.encode({ sub: user.id, iat: timestamp }, config.secret);
 }
 
-exports.login = function(req, res, next) {
+exports.login = function (req, res, next) {
   //user has had their email and password auth'd
   //we just need to give them a token
   res.send({ token: tokenForUser(req.user) });
 };
 
-exports.register = function(req, res, next) {
+exports.register = function (req, res, next) {
   const email = req.body.email;
   const password = req.body.password;
-  const username = req.body.password;
 
-  if (!email || !password || !username) {
+  if (!email || !password) {
     return res
       .status(422)
       .send({ error: "You must provide email and password " });
   }
 
   //see if user with given email exist
-  User.findOne({ email: email }, function(err, existingUser) {
+  User.findOne({ email: email }, function (err, existingUser) {
     if (err) {
       return next(err);
     }
@@ -38,11 +37,10 @@ exports.register = function(req, res, next) {
     //if a user with email does NOT exist create and save user record
     const user = new User({
       email: email,
-      password: password,
-      username: username
+      password: password
     });
 
-    user.save(function(err) {
+    user.save(function (err) {
       if (err) {
         return next(err);
       }

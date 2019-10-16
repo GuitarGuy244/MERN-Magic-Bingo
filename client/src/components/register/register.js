@@ -24,7 +24,7 @@ import * as actions from "../../actions";
 
 class Register extends Component {
   onSubmit = formProps => {
-    this.props.signup(formProps, () => {
+    this.props.register(formProps, () => {
       this.props.history.push("/dashboard");
     });
   };
@@ -33,7 +33,7 @@ class Register extends Component {
     super(props);
 
     this.state = {
-      username: "",
+      // username: "",
       email: "",
       password: ""
     };
@@ -41,7 +41,7 @@ class Register extends Component {
 
   validateForm() {
     return (
-      this.state.username.length > 0 &&
+      // this.state.username.length > 0 &&
       this.state.email.length > 0 &&
       this.state.password.length > 0
     );
@@ -90,7 +90,7 @@ class Register extends Component {
                   <form
                     noValidate
                     autoComplete="off"
-                    onSubmit={this.handleSubmit}
+                    onSubmit={handleSubmit(this.onSubmit)}
                     className="content"
                     style={{
                       display: "flex",
@@ -100,40 +100,42 @@ class Register extends Component {
                     }}
                   >
                     {/* <Link to="/">Back to Game</Link> */}
-                    <TextField
-                      name="username"
-                      type="text"
-                      id="username"
-                      label="Username"
-                      margin="normal"
-                      value={this.state.username}
-                      onChange={this.handleChange}
-                    >
-                      <Field name="username" type="text" component="input" />
-                    </TextField>
-                    <TextField
-                      name="email"
-                      type="text"
-                      id="email"
-                      label="Email"
-                      margin="normal"
-                      value={this.state.email}
-                      onChange={this.handleChange}
-                    >
-                      <Field name="email" type="text" component="input" />
-                    </TextField>
-                    <TextField
-                      name="password"
-                      id="password"
-                      controlId="password"
-                      label="Password"
-                      type="password"
-                      margin="normal"
-                      value={this.state.password}
-                      onChange={this.handleChange}
-                    >
-                      <Field name="password" type="password" component="input" />
-                    </TextField>
+                    <fieldset>
+                      {/* <TextField
+                        name="username"
+                        type="text"
+                        id="username"
+                        label="Username"
+                        margin="normal"
+                        value={this.state.username}
+                        onChange={this.handleChange}
+                      >
+                        <Field name="username" type="text" component="input" />
+                      </TextField> */}
+                      <TextField
+                        name="email"
+                        type="text"
+                        id="email"
+                        label="Email"
+                        margin="normal"
+                        value={this.state.email}
+                        onChange={this.handleChange}
+                      >
+                        <Field name="email" type="text" component="input" />
+                      </TextField>
+                      <TextField
+                        name="password"
+                        id="password"
+                        controlId="password"
+                        label="Password"
+                        type="password"
+                        margin="normal"
+                        value={this.state.password}
+                        onChange={this.handleChange}
+                      >
+                        <Field name="password" type="password" component="input" />
+                      </TextField>
+                    </fieldset>
                     <CardActions>
                       <Button
                         block
@@ -167,5 +169,5 @@ export default compose(
     mapStateToProps,
     actions
   ),
-  reduxForm({ form: "signup" })
+  reduxForm({ form: "register" })
 )(Register);

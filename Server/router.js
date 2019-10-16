@@ -14,6 +14,6 @@ module.exports = function (app) {
     res.send({ Welcom: 'to the game' });
   });
 
-  app.post("/", requireLogin, Authentication.login);
+  app.post("/login", requireLogin, Authentication.login);
   app.post("/register", Authentication.register);
 };

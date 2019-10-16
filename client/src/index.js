@@ -10,6 +10,9 @@ import Login from "./components/Login/login";
 import Register from "./components/register/register";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Game from "./components/Game/game";
+import SignIn from "./components/Login/Signin";
+import SignUp from "./components/register/Signup";
+import Signout from "./components/Signout";
 
 
 const store = createStore(
@@ -25,10 +28,11 @@ ReactDOM.render(
     <Provider store={store}>
         <Router>
             <App>
-                <Route path="/" exact component={Login} />
-                <Route path="/register" component={Register} />
+                <Route path="/" exact component={SignIn} />
+                <Route path="/register" component={SignUp} />
                 <Route path="/dashboard" component={MiniDrawer} />
                 <Route path="/game" component={Game} />
+                <Route path="/signout" component={Signout} />
             </App>
         </Router>
     </Provider>,

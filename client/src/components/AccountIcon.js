@@ -4,6 +4,7 @@ import Menu from "@material-ui/core/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import IconButton from "@material-ui/core/IconButton";
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -55,8 +56,10 @@ export default function AccountIcon() {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link to="/signout">Sign Out</Link>
+        </MenuItem>
+        {/* <MenuItem onClick={handleClose}>My account</MenuItem> */}
       </Menu>
     </div>
   );

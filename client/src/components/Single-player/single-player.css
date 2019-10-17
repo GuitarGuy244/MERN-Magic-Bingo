@@ -3,3 +3,9 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.playButtom {
+  display: flexbox;
+  justify-content: center;
+  margin-top: 200px;
+}

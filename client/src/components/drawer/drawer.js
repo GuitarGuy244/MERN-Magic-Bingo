@@ -79,7 +79,7 @@ const useStyles = makeStyles(theme => ({
     display: "flex"
   },
   appBar: {
-    background: "linear-gradient(45deg, purple 30%, pink 90%)",
+    background: "linear-gradient(45deg, pink 30%, purple 90%)",
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(["width", "margin"], {
       easing: theme.transitions.easing.sharp,
@@ -106,7 +106,7 @@ const useStyles = makeStyles(theme => ({
     whiteSpace: "nowrap"
   },
   drawerOpen: {
-    background: "linear-gradient(45deg, pink 30%, purple 90%)",
+    background: "linear-gradient(45deg, purple 30%, pink 90%)",
     width: drawerWidth,
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
@@ -114,7 +114,7 @@ const useStyles = makeStyles(theme => ({
     })
   },
   drawerClose: {
-    background: "linear-gradient(45deg, pink 30%, purple 90%)",
+    background: "linear-gradient(45deg, purple 30%, pink 90%)",
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
@@ -140,6 +140,9 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     display: "flex",
     justifyContent: "center"
+  },
+  fontColor: {
+    color: "black"
   }
 }));
 
@@ -165,7 +168,7 @@ function MiniDrawer() {
           [classes.appBarShift]: open
         })}
       >
-        <Toolbar>
+        <Toolbar className={classes.fontColor}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -216,7 +219,7 @@ function MiniDrawer() {
             {/* <Router> */}
             <Link to="/dashboard">
               <ListItem button key="Single-player Game">
-                <ListItemIcon>
+                <ListItemIcon className="fontColor">
                   <PersonIcon />
                 </ListItemIcon>
                 <ListItemText primary="Single-player Game" />

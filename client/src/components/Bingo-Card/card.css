@@ -50,5 +50,28 @@ ol, ul {
 }
 
 .game-info {
-  width: 13%;
+  background-image: url("scroll3.png");
+  background-size: contain;
+  height: 500px;
+  width: 350px;
+  background-repeat: no-repeat;
+  margin-top: 5%;
+  position: relative;
+}
+
+.reading {
+  /* display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center; */
+  /* align-content: center; */
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  padding: 56px;
+  position: relative;
 }

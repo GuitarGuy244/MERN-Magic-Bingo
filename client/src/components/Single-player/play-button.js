@@ -35,13 +35,14 @@ const useStyles = makeStyles(theme => ({
     marginBottom: 12
   },
   fab: {
-    margin: theme.spacing(1),
+    // margin: theme.spacing(1),
+    marginTop: "50px",
     fontSize: "35px",
     fontWeight: "bold",
-    maxWidth: "600px",
-    maxHeight: "600px",
-    minWidth: "600px",
-    minHeight: "600px"
+    maxWidth: "850px",
+    maxHeight: "850px",
+    minWidth: "850px",
+    minHeight: "850px"
   },
   extendedIcon: {
     marginRight: theme.spacing(1)

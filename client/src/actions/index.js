@@ -2,7 +2,7 @@ import axios from "axios";
 import { AUTH_USER, AUTH_ERROR } from "./types";
 
 // export const signup = ({ email, password }) => dispatch => {
-//   axios.post("http://localhost:3090/signup", {
+//   axios.post("http://localhost:3090/register", {
 //     email: email,
 //     password: password
 //   });
@@ -12,7 +12,7 @@ import { AUTH_USER, AUTH_ERROR } from "./types";
 export const register = (formProps, callback) => async dispatch => {
   try {
     const response = await axios.post(
-      "http://localhost:3090/signup",
+      "http://localhost:3090/register",
       formProps
     );
 
@@ -27,7 +27,7 @@ export const register = (formProps, callback) => async dispatch => {
 export const login = (formProps, callback) => async dispatch => {
   try {
     const response = await axios.post(
-      "http://localhost:3090/signin",
+      "http://localhost:3090/login",
       formProps
     );
 

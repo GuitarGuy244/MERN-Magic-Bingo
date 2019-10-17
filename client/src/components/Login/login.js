@@ -23,8 +23,8 @@ import { flexbox } from "@material-ui/system";
 
 class Login extends Component {
   onSubmit = formProps => {
-    this.props.signin(formProps, () => {
-      this.props.history.push("/dashboard");
+    this.props.login(formProps, () => {
+      // this.props.history.push("/dashboard");
     });
   };
 
@@ -84,7 +84,7 @@ class Login extends Component {
                   <form
                     noValidate
                     autoComplete="off"
-                    // onSubmit={this.handleSubmit}
+                    onSubmit={handleSubmit(this.onSubmit)}
                     className="content"
                     style={{
                       display: "flex",
@@ -121,7 +121,7 @@ class Login extends Component {
                         type="submit"
                         onClick={this.handleSubmit}
                         value="Refresh Page"
-                        onClick="window.location.reload();"
+                      // onClick="window.location.reload();"
                       >
                         <Link to="/dashboard">Login</Link>
                       </Button>

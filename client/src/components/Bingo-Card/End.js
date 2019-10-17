@@ -4,7 +4,7 @@ import { Button } from "@material-ui/core";
 
 class End extends React.Component {
     handleClick = () => {
-        this.props.history.push("/");
+        this.props.history.push("/dashboard");
     }
 
     render() {

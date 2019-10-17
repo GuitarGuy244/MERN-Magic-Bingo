@@ -12,4 +12,4 @@ function Games() {
   );
 }
 
-export default requireAuth(Games);
+export default Games;

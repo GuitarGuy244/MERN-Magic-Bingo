@@ -1,6 +1,8 @@
 import React from "react";
-import Card from "@material-ui/core/Card";
 import "./card.css";
+import { Button } from "@material-ui/core";
+import End from "./End";
+import Restart from "./Restart";
 
 // Add images to dictionary
 const dict = {};
@@ -471,6 +473,26 @@ class Reading extends React.Component {
   }
 }
 
+// class Restart extends React.Component {
+//   render() {
+//     return <Button className="restart">Restart Game</Button>
+//   }
+// }
+
+// class End extends React.Component {
+//   constuctor() {
+//     this.routeChange = this.routeChange.bind(this);
+//   }
+
+//   routeChange() {
+//     this.props.history.push("/game");
+//   }
+
+//   render() {
+//     return <Button className="end" onClick={this.routeChange}>Leave Game</Button>
+//   }
+// }
+
 // Game component holds all the other components 
 export default class Game extends React.Component {
   constructor(props) {
@@ -494,15 +516,19 @@ export default class Game extends React.Component {
   render() {
     console.log(this.state);
     return (
-      <div className="game">
-        <div className="game-caller">
-          <Caller />
-        </div>
-        <div className="game-board">
-          <Board updateFuture={this.updateFuture} />
-        </div>
-        <div className="game-info">
-          <Reading future={this.state.future} />
+      <div>
+        <div><Restart /></div>
+        <div><End /></div>
+        <div className="game">
+          <div className="game-caller">
+            <Caller />
+          </div>
+          <div className="game-board">
+            <Board updateFuture={this.updateFuture} />
+          </div>
+          <div className="game-info">
+            <Reading future={this.state.future} />
+          </div>
         </div>
       </div>
     );

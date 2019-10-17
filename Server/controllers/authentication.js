@@ -53,5 +53,5 @@ exports.register = function (req, res, next) {
 
 exports.addReading = function (req, res, next) {
   const reading = req.body.reading;
-  User.findOneAndUpdate({ email: req.user.email }, { $push: { reading: reading } });
+  User.findOneAndUpdate({ email: req.body.email }, { $push: { reading: reading } });
 }

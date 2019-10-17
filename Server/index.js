@@ -12,7 +12,7 @@ const cors = require("cors");
 mongoose.set("useFindAndModify", false);
 mongoose.set("useCreateIndex", true);
 mongoose.set("useUnifiedTopology", true);
-mongoose.connect("mongodb://localhost:auth/auth", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost:auth/bingo", { useNewUrlParser: true });
 
 //app setup
 app.use(morgan("combined"));

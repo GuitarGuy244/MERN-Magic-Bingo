@@ -15,6 +15,7 @@ mongoose.set("useUnifiedTopology", true);
 mongoose.connect("mongodb://localhost:auth/bingo", { useNewUrlParser: true });
 
 //app setup
+// app.use(express.static("public"));
 app.use(morgan("combined"));
 app.use(cors());
 app.use(bodyParser.json({ type: "*/*" }));

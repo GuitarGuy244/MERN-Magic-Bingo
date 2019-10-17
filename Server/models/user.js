@@ -7,7 +7,7 @@ const userSchema = new Schema({
   email: { type: String, unique: true, lowercase: true },
   password: String,
   // username: { type: String, unique: true, lowercase: true },
-  reading: { type: Schema.Types.ObjectId, ref: "Reading" }
+  reading: [{ type: String, ref: "Reading" }]
 });
 
 //on save hook, encrypt password

@@ -11,8 +11,10 @@ module.exports = function (app) {
   });
 
   app.get("/game", requireAuth, function (req, res) {
-    res.send({ Welcom: 'to the game' });
+    res.send({ Welcome: 'to the game' });
   });
+
+  app.post('/addReading', requireAuth, Authentication.addReading);
 
   app.post("/login", requireLogin, Authentication.login);
   app.post("/register", Authentication.register);
